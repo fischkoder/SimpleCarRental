@@ -1,0 +1,148 @@
+{
+    "cars":[
+        {
+            "category":"Wagon",
+            "availability":"True",
+            "brand":"Audi",
+            "model":"A4",
+            "model_year":"2015",
+            "mileage":"9000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"220",
+            "description":"It's a good car"
+        },
+        {
+            "category":"Sedan",
+            "availability":"True",
+            "brand":"Toyota",
+            "model":"Camry",
+            "model_year":"2013",
+            "mileage":"10000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"120",
+            "description":"It's a good car"
+        },
+        {
+            "category":"SUV",
+            "availability":"False",
+            "brand":"Chevrolet",
+            "model":"Captiva",
+            "model_year":"2013",
+            "mileage":"20000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"150",
+            "description":"It's a good car"
+        },
+        {
+            "category":"SUV",
+            "availability":"True",
+            "brand":"Jeep",
+            "model":"Cherokee",
+            "model_year":"2013",
+            "mileage":"12000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"230",
+            "description":"It's a good car"
+        },
+        {
+            "category":"Sedan",
+            "availability":"True",
+            "brand":"Honda",
+            "model":"Civic",
+            "model_year":"2014",
+            "mileage":"15000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"100",
+            "description":"It's a good car"
+        },
+        {
+            "category":"SUV",
+            "availability":"True",
+            "brand":"Benz",
+            "model":"GLC",
+            "model_year":"2015",
+            "mileage":"7000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"280",
+            "description":"It's a good car"
+        },
+        {
+            "category":"Hatch",
+            "availability":"True",
+            "brand":"Volkswagon",
+            "model":"Golf",
+            "model_year":"2014",
+            "mileage":"10000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"150",
+            "description":"It's a good car"
+        },
+        {
+            "category":"SUV",
+            "availability":"False",
+            "brand":"Suzuki",
+            "model":"Jimny",
+            "model_year":"2012",
+            "mileage":"18000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"130",
+            "description":"It's a good car"
+        },
+        {
+            "category":"SUV",
+            "availability":"True",
+            "brand":"Nissan",
+            "model":"Xtrail",
+            "model_year":"2013",
+            "mileage":"19000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"150",
+            "description":"It's a good car"
+        },
+        {
+            "category":"Sedan",
+            "availability":"False",
+            "brand":"BMW",
+            "model":"320i",
+            "model_year":"2013",
+            "mileage":"12000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"200",
+            "description":"It's a good car"
+        },
+        {
+            "category":"Wagon",
+            "availability":"True",
+            "brand":"Volkswagon",
+            "model":"Passat",
+            "model_year":"2014",
+            "mileage":"15000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"190",
+            "description":"It's a good car"
+        },
+        {
+            "category":"Sedan",
+            "availability":"False",
+            "brand":"Hyundai",
+            "model":"Sonata",
+            "model_year":"2013",
+            "mileage":"12000",
+            "fuel_type":"Petrol",
+            "seats":"5",
+            "price_per_day":"130",
+            "description":"It's a good car"
+        }
+    ]
+}

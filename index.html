@@ -1,0 +1,150 @@
+<html lang="en">
+    <style>
+        .navbar {
+            height: 100px;
+            white-space: nowrap;
+            background-color: black;
+        }
+
+        #logo {
+            padding-top: 5px;
+            padding-left: 20px;
+            font-style: italic;
+            font-weight: bold;
+            color: yellow;
+            float: left;
+        }
+        #title {
+            position: absolute;
+            top: 15px;
+            left: 40%;
+            color: white;
+            float: left;
+        }
+        .btn {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            background-color: darkcyan;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .bottom{
+            height: 80px;
+            background-color: black;
+        }
+
+        #market {
+            display: flex;
+            object-fit: cover;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        #market div{
+            border-style: none;
+            box-shadow: 5px 5px 10px #7B7B7B;
+            border-radius: 10px;
+            margin: 10px;
+
+        }
+
+        .order {
+            margin:20;
+            background-color:mediumpurple;
+            border-style: none;
+            border-radius: 5px;
+            font-size: 15px;
+            color:mintcream;
+            font-weight: bold;
+            padding: 5px 10px;
+            box-shadow: 2px 2px 4px #7B7B7B;
+        }
+
+    </style>
+<head>
+    <title>Hertz-UTS</title>
+</head>
+<script type="text/javascript">
+    function loadCars(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+               showCarList(this.responseText);
+            }
+        };
+        xhr.open("GET","cars.json",true);
+        xhr.send(null);
+    }
+
+    function showCarList(json){
+        if(json){
+            var cars = JSON.parse(json);
+            var container = cars.cars;
+            var str = "";
+
+            for(var i=0; i < container.length; i++){
+                var car = container[i];
+                console.log(container[i]['model']);
+                var img = container[i]['model'];
+                var vehicle = container[i]['brand']+'-'+container[i]['model']+'-'+container[i]['model_year'];
+                var mileage = container[i]['mileage'];
+                var fuel =  container[i]['fuel_type'];
+                var seats = container[i]['seats'];
+                var price = container[i]['price_per_day'];
+                var avail = container[i]['availability'];
+                var description = container[i]['description'];
+
+                str += '<div>'
+                str += '<img src="pics/'+img+'.jpg" height="240px" width="320px">';
+                str += '<ul>';
+                str += '<h3>'+vehicle+'</h3>';
+                str += '<li>Mileage: '+mileage+'KMs </li>';
+                str += '<li>Fuel Type: '+fuel+'</li>';
+                str += '<li>Seats: '+seats+'</li>';
+                str += '<li>Availability: '+avail+'</li>';
+                str += '<li>Description: '+description+'</li>';
+                str += '</ul>';
+                str += '<button class="order" onClick="postData(\''+img+'\',\''+vehicle+'\',\''+price+'\',\''+avail+'\')">RENT</button>';
+                str += '</div>';
+                
+                document.getElementById("market").innerHTML = str;
+            }
+        }
+    }
+
+    function postData(img,vehicle,price,avail){
+        var order = "image="+img+"&car="+vehicle+"&price="+price+"&availability="+avail;
+        var xh = new XMLHttpRequest();
+        xh.onreadystatechange = function(){
+            var res = this.responseText;
+            if(this.readyState == 4 && this.status == 200){
+                if(res == "false"){
+                    alert("Sorry, This car is not available.");
+                }else{
+                    alert("Add to Reservation successfully.");
+                }
+            }
+        }
+        xh.open("POST","session.php",true);
+        xh.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xh.send(order);
+    }
+</script>
+<body onload="loadCars()">
+    <div class="navbar">
+        <h1 id="logo">Hertz-UTS</h1>
+        <h1 id="title">Car Rental Center</h1>
+        <form class="button" action="reservation.php"><input class="btn" name="shcart" type="submit" value="Car Reservation"></form>
+    </div>
+    <div id="market" name="cars"></div>
+    <div class="bottom"></div>
+</body>
+</html>
